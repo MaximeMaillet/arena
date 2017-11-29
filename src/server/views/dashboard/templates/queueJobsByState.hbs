@@ -91,8 +91,13 @@
             </div>
 
             <a role="button" data-toggle="collapse" href="#collapse{{encodeIdAttr this.id}}">
-              <h4 class="header-collapse"><small>N°{{this.id }}</small> - {{ this.name }}</h4>
-            </a>
+              <h4 class="header-collapse">{{ this.data.workflow.config.name }} - {{ this.data.workflow.stage.name }}</h4>
+            </a><br>
+            <small style="display: block; margin-left: 30px;">
+                ID workflow : {{ this.data.workflow.config.id }}<br>
+                ID job : {{ this.id }}<br>
+                Name job : {{ this.name }}
+            </small>
             <div id="collapse{{encodeIdAttr this.id}}" class="collapse">
               {{> dashboard/jobDetails this basePath=../basePath displayJobInline=true queueName=../queueName queueHost=../queueHost jobState=../state }}
             </div>
